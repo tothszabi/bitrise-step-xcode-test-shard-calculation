@@ -2,6 +2,7 @@ package step
 
 import (
 	"encoding/json"
+	"fmt"
 	"os"
 	"os/exec"
 	"path/filepath"
@@ -26,8 +27,8 @@ func CollectTests(testProductsPath, destination string) ([]string, error) {
 		return nil, err
 	}
 
-	//outputString := string(bytes)
-	//fmt.Println(outputString)
+	outputString := string(bytes)
+	fmt.Println(outputString)
 
 	type testData struct {
 		Values []struct {
