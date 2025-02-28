@@ -71,7 +71,8 @@ func (s *Step) ProcessConfig() (*Config, error) {
 	}, nil
 
 	//return &Config{
-	//	ProductPath: "/Users/szabi/Developer/misc/ManyTests/test-products.xctestproducts",
+	//	//ProductPath: "/Users/szabi/Developer/misc/ManyTests/test-products.xctestproducts",
+	//	ProductPath: "/Users/szabi/Downloads/Net/testbundle/ManyTests_ManyTests_iphonesimulator18.2-arm64-x86_64.xctestrun",
 	//	ShardCount:  5,
 	//	Destination: "platform=iOS Simulator,name=iPhone 16 Pro Max,OS=latest",
 	//}, nil

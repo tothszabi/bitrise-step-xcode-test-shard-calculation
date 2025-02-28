@@ -14,7 +14,8 @@ func CollectTests(testProductsPath, destination string) ([]string, error) {
 	}
 
 	testOutput := filepath.Join(tmpDir, "result.txt")
-	cmd := exec.Command("xcodebuild", "test-without-building", "-enumerate-tests", "-test-enumeration-format", "json", "-test-enumeration-style", "flat", "-test-enumeration-output-path", testOutput, "-testProductsPath", testProductsPath, "-destination", destination)
+	//cmd := exec.Command("xcodebuild", "test-without-building", "-enumerate-tests", "-test-enumeration-format", "json", "-test-enumeration-style", "flat", "-test-enumeration-output-path", testOutput, "-testProductsPath", testProductsPath, "-destination", destination)
+	cmd := exec.Command("xcodebuild", "test-without-building", "-enumerate-tests", "-test-enumeration-format", "json", "-test-enumeration-style", "flat", "-test-enumeration-output-path", testOutput, "-xctestrun", testProductsPath, "-destination", destination)
 
 	if err := Execute(cmd); err != nil {
 		return nil, err
