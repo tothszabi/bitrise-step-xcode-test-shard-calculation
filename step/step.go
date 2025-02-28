@@ -89,11 +89,11 @@ func (s *Step) Run(config Config) (Result, error) {
 		return Result{}, fmt.Errorf("no tests found in %s", config.ProductPath)
 	}
 
-	shardFolder := "/Users/szabi/Developer/misc/ManyTests/test-output"
-	//shardFolder, err := CreateTempFolder()
-	//if err != nil {
-	//	return Result{}, err
-	//}
+	//shardFolder := "/Users/szabi/Developer/misc/ManyTests/test-output"
+	shardFolder, err := CreateTempFolder()
+	if err != nil {
+		return Result{}, err
+	}
 
 	for i, shard := range shards {
 		shardPath := filepath.Join(shardFolder, fmt.Sprintf("%d", i))
