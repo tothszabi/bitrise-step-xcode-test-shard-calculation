@@ -19,7 +19,7 @@ const (
 type Input struct {
 	ProductPath      string `env:"product_path,required"`
 	ShardCount       int    `env:"shard_count,required"`
-	ShardCalculation string `env:"shard_calculation,required,opt[alphabetically]"`
+	ShardCalculation string `env:"shard_calculation,opt[alphabetically]"`
 	Destination      string `env:"destination,required"`
 	Verbose          bool   `env:"verbose,opt[true,false]"`
 }
