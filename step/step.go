@@ -17,16 +17,18 @@ const (
 )
 
 type Input struct {
-	ProductPath string `env:"product_path,required"`
-	ShardCount  int    `env:"shard_count,required"`
-	Destination string `env:"destination,required"`
-	Verbose     bool   `env:"verbose,opt[true,false]"`
+	ProductPath      string `env:"product_path,required"`
+	ShardCount       int    `env:"shard_count,required"`
+	ShardCalculation string `env:"shard_calculation,required,opt[alphabetically]"`
+	Destination      string `env:"destination,required"`
+	Verbose          bool   `env:"verbose,opt[true,false]"`
 }
 
 type Config struct {
-	ProductPath string
-	ShardCount  int
-	Destination string
+	ProductPath      string
+	ShardCount       int
+	ShardCalculation string
+	Destination      string
 }
 
 type Result struct {
@@ -65,9 +67,10 @@ func (s *Step) ProcessConfig() (*Config, error) {
 	s.logger.EnableDebugLog(input.Verbose)
 
 	return &Config{
-		ProductPath: input.ProductPath,
-		ShardCount:  input.ShardCount,
-		Destination: input.Destination,
+		ProductPath:      input.ProductPath,
+		ShardCount:       input.ShardCount,
+		ShardCalculation: input.ShardCalculation,
+		Destination:      input.Destination,
 	}, nil
 
 	//return &Config{

@@ -41,6 +41,17 @@ inputs:
       TBD
     is_required: true
 
+- shard_calculation: alphabetically
+  opts:
+    title: Shard calculation
+    summary: |-
+      TBD
+    description: |-
+      TBD
+    is_required: true
+    value_options:
+    - "alphabetically"
+
 - destination: platform=iOS Simulator,name=Bitrise iOS default,OS=latest
   opts:
     title: Device destination specifier
