@@ -41,7 +41,7 @@ inputs:
       TBD
     is_required: true
 
-- shard_calculation: alphabetically
+- shard_calculation: "alphabetically"
   opts:
     title: Shard calculation
     summary: |-
